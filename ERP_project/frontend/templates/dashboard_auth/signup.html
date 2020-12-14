@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="icon" type="image/png" href="/static/favicon/favicon.png" />
+    <link rel="stylesheet" href="/static/bootstrap4/bootstrap.min.css">
+    <script src="/static/bootstrap4/jquery.min.js"></script>
+    <script src="/static/bootstrap4/popper.min.js"></script>
+    <script src="/static/bootstrap4/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <main style="margin-top: 20px;">
+        <div class="cotainer">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">Register</div>
+                        <div class="card-body">
+                            {% if error_message %}
+                                <div style="border-bottom: crimson 1px solid; margin-bottom:20px;">
+                                    <div style="text-align:center; margin:10px; color:red; font-size: 20px; "><b>  {{error_message}} </b> </div>
+                                </div>
+                            {% endif %}
+                            <form  method="POST">
+                                {% csrf_token %}
+                                <div class="form-group row">
+                                    <label for="full_name" class="col-md-4 col-form-label text-md-right">first
+                                        Name</label>
+                                    <div class="col-md-6">
+                                        <input type="text"  class="form-control" name="first_name">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="email_address" class="col-md-4 col-form-label text-md-right">last
+                                        name</label>
+                                    <div class="col-md-6">
+                                        <input type="text"  class="form-control" name="last_name">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="user_name" class="col-md-4 col-form-label text-md-right">user name</label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" name="username">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="user_name" class="col-md-4 col-form-label text-md-right">email</label>
+                                    <div class="col-md-6">
+                                        <input type="email" class="form-control" name="email">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="phone_number"
+                                        class="col-md-4 col-form-label text-md-right">password</label>
+                                    <div class="col-md-6">
+                                        <input type="password" name="pass1" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="present_address" class="col-md-4 col-form-label text-md-right">confirm
+                                        password</label>
+                                    <div class="col-md-6">
+                                        <input type="password" name="pass2" class="form-control">
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6 offset-md-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        Register
+                                    </button>
+                                </div>
+                        </div>
+                        </form>
+                    </div>
+                    <div>
+                        Existing users , please <a href="login">LOGIN </a> here
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </main>
+</body>
+
+</html>
