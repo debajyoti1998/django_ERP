@@ -1,6 +1,75 @@
 {% extends 'base.html' %}
 
 {% block body %}
-    <h1>Dashboard</h1>
-    <p>This is some text.</p>
+
+        
+        <div class="container mt-5">
+            <h2>My Dashboard</h2>
+            <div class="row mt-5">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Add Products</h4>
+                            <p class="card-text"> Add new products or deactivate existing products</p>
+                            <a href="/products" class="btn btn-primary stretched-link">Add Product</a>
+                                                  
+                        </div>
+
+                    </div>
+                </div>
+    
+                <!-- <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">remove products</h4>
+                            <p class="card-text">remove a product <br>click billow</p>
+                            <a href="#" class="btn btn-primary stretched-link">remove product</a>
+                        </div>
+                    </div>
+                </div> -->
+     
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Stock</h4>
+                            <p class="card-text">Check total product stocks of your organisation</p>
+                            <a href="#" class="btn btn-primary stretched-link">Stock</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+        <div class="container mt-5">
+        
+          <div class="row mt-5">
+              <div class="col-md-4">
+                  <div class="card">
+                      <div class="card-body">
+                          <h4 class="card-title">sell product</h4>
+                          <p class="card-text"> Add new products or deactivate existing products</p>
+                          <a href="/products/sell" class="btn btn-primary stretched-link">sell Product</a>
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="col-md-4">
+                  <div class="card">
+                      <div class="card-body">
+                          <h4 class="card-title">Purchase product</h4>
+                          <p class="card-text"> Sell your products to customers or purchase from vendor</p>
+                          <a href="/products/purchase" class="btn btn-primary stretched-link">purchase Product</a>
+                      </div>
+                  </div>
+              </div>
+
+      </div>
+
+
+
+
+      
 {% endblock body %}
+
+
+

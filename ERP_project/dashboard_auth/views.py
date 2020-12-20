@@ -1,9 +1,10 @@
 from django.shortcuts import render ,HttpResponse,redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.models import auth,User
 
 # Create your views here.
 def dashboard(request):
+   
     context = {
         "loginStatus": request.user.is_authenticated
     }
@@ -64,15 +65,19 @@ def login(request):
         if( username != None and pass1 != None):
             print(username)
             print(pass1)
-            user=authenticate(username=username,pass1=pass1)
+            user=auth.authenticate(username=username,password=pass1)
             print(user)
             if user is not None:
-                login(request,user)
-                return HttpResponse('login success')
+                auth.login(request,user)
+                return redirect('dashboard')
             else:
                 return HttpResponse('email & password wrong')
         else:
             return HttpResponse('email or password not received')
     else:
         return render(request,'dashboard_auth/login.html')
+
+def logout(request):
+    auth.logout(request)
+    return redirect('login')
 
