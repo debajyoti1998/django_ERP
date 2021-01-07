@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+<div class="container mt-5">
+    <h2>Update Product </h2>
+    <div class="row mt-5">
+        <div class="col-md-12">
+            {% if error %}
+                <p> {{error}} </p> 
+            {% endif %}
+
+            <form method="POST">
+                {% csrf_token %}
+                
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Product Name</span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Product name" name="p_name" required>
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">purchase_price</span>
+                  </div>
+                  <input type="number" class="form-control" placeholder="purchase_price" name="p_purchase_price" required>
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">sell_price</span>
+                  </div>
+                  <input type="number" class="form-control" placeholder="sell_price" name="p_sell_price" required>
+                </div>
+              
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+
+    </div>
+</div>
+
+
+
+{% endblock body %}

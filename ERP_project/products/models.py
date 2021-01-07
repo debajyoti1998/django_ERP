@@ -4,8 +4,12 @@ from django.db import models
 # ----DB model -----
 class Products(models.Model):
     name = models.CharField(max_length=30)
-    # price = models.DecimalField(max_digits=6, decimal_places=2)
+    purchase_price = models.DecimalField(max_digits=6, decimal_places=2,default=0)
+    sell_price = models.DecimalField(max_digits=6, decimal_places=2,default=0)
+    stock= models.DecimalField(max_digits=6, decimal_places=2,default=0)
     image = models.ImageField(upload_to="pics/products/")
+    deleted=models.IntegerField(default=0)
+
 # class Products(models.Model):
 #     product_name=models.CharField(max_length=30)
 #     product_price=models.DecimalField(max_digits=6, decimal_places=2)

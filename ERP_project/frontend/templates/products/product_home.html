@@ -17,39 +17,30 @@
                 <thead style="background-color: #b886bb;">
                   <tr>
                     <th>Product</th>
-                    <th>Price</th>
-                    <th>stock</th>
+                    <th>image</th>
+                    <th>purchase_price</th>
+                    <th>sell_price</th>
                     <th>action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>john@example.com</td>
-                    <td> 
-                        <button type="button" class="btn btn-info"> Edit</button>
-                        <button type="button" class="btn btn-danger"> Delete</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Mary</td>
-                    <td>Moe</td>
-                    <td>mary@example.com</td>
-                    <td> 
-                        <button type="button" class="btn btn-info"> Edit</button>
-                        <button type="button" class="btn btn-danger"> Delete</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>July</td>
-                    <td>Dooley</td>
-                    <td>july@example.com</td>
-                    <td> 
-                        <button type="button" class="btn btn-info"> Edit</button>
-                        <button type="button" class="btn btn-danger"> Delete</button>
-                    </td>
-                  </tr>
+                  {% for product in products %}
+
+                    <tr>
+                      <td>{{product.name}}</td>
+                      <td>{{product.image}}</td>
+                      <td>{{product.purchase_price}}</td>
+                      <td>{{product.sell_price}}</td>
+                      
+                      <td> 
+                          <a href="update/{{product.id}}"> <button type="button" class="btn btn-info"> Edit</button> </a>
+                          <a href="delete/{{product.id}}">  <button type="button" class="btn btn-danger"> Delete</button>  </a>
+                      </td>
+                    </tr>
+
+                  {% endfor %}
+                  
+                  
                 </tbody>
               </table>
         </div>
